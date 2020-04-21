@@ -3,12 +3,21 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `
-        <label>Введите имя:</label>
-        <input [(ngModel)]="name" placeholder="name" />
-        <h1>Добро пожаловать {{ name }}!</h1>
-    `
+        <child-comp>
+            <h2>Добро пожаловать {{ name }}!</h2>
+        </child-comp>
+        <p>Привет {{ name }}</p>
+    `,
+    styles: [
+        `
+        h2,
+        p {
+          color: #333;
+        }
+      `
+    ]
 })
 
 export class AppComponent {
-    name = ''
+    name = 'Петр'
 }
